@@ -1,59 +1,76 @@
-# HeroApp
+# Hero App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+This is a modern Hero Management App built with **Angular 18** featuring **Signals**, **Lazy-loaded Modules**, **Routing**, and a **Signal-based State Management Service**. It includes functionality to **list, create, edit, and delete heroes** and a **filterable search input**.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Key Features
 
-```bash
-ng serve
-```
+- **Angular 18 with Signals** for reactivity.
+- **Lazy-loaded Modules** for better performance.
+- **Routing with RouterModule** for navigation.
+- **State Management using Signals in a Service**.
+- **SCSS-based styling** with a modern and clean design.
+- **Hero Filtering** via a search input.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/emsabbatini8416/hero-app.git
+   ```
 
-```bash
-ng generate component component-name
-```
+2. **Navigate to the project directory:**
+   ```bash
+   cd hero-app
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+4. **Run the application:**
+   ```bash
+   ng serve
+   ```
 
-## Building
+---
 
-To build the project run:
+## 🛠️ Usage
 
-```bash
-ng build
-```
+### Hero List
+- View all heroes.
+- Search heroes by name using the search input.
+- Navigate to **Create** or **Edit** Hero pages.
+- Delete a hero.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Create / Edit Hero
+- Fill in the hero's name and save.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🖌️ Styling
+Each component has its **dedicated SCSS file** with modern styles, including buttons, inputs, and cards.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 🤝 Contributing
+Feel free to fork this repository and submit pull requests. Any suggestions and improvements are welcome!
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📝 License
+This project is licensed under the MIT License.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📧 Contact
+For any inquiries or issues, feel free to reach out via email or open an issue on GitHub.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+Happy Coding! 🚀
+
