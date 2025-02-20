@@ -1,13 +1,26 @@
 <div class="hero-list-container">
   <h1>Hero List</h1>
+  
+  <div class="filter-container">
+    <input
+      type="text"
+      placeholder="Search heroes by name..."
+      [value]="filterText()"
+      (input)="onFilterChange($event)"
+    />
+  </div>
+
   <div class="hero-list">
-    <div class="hero-card" *ngFor="let hero of heroes()">
+    <div class="hero-card" *ngFor="let hero of filteredHeroes()">
       <div class="hero-name">{{ hero.name }}</div>
-      <div class="hero-id">ID: {{ hero.id }}</div>
       <div class="button-group">
         <button class="edit" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
         <button class="delete" (click)="deleteHero(hero.id)">Delete</button>
       </div>
+    </div>
+
+    <div class="no-results" *ngIf="filteredHeroes().length === 0">
+      No heroes found.
     </div>
   </div>
 
