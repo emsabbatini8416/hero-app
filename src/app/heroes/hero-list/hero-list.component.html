@@ -1,0 +1,17 @@
+<div class="hero-list-container">
+  <h1>Hero List</h1>
+  <div class="hero-list">
+    <div class="hero-card" *ngFor="let hero of heroes()">
+      <div class="hero-name">{{ hero.name }}</div>
+      <div class="hero-id">ID: {{ hero.id }}</div>
+      <div class="button-group">
+        <button class="edit" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
+        <button class="delete" (click)="deleteHero(hero.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="create-hero-button" [routerLink]="['/heroes/create']">
+    Create New Hero
+  </button>
+</div>

@@ -1,0 +1,15 @@
+<div class="hero-form-container">
+  <h2>{{ editMode() ? 'Edit Hero' : 'Create Hero' }}</h2>
+
+  <form [formGroup]="heroForm" (ngSubmit)="saveHero()">
+    <div class="form-group">
+      <label for="name">Hero Name</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+
+    <div class="button-group">
+      <button class="save" type="submit" [disabled]="heroForm.invalid">Save</button>
+      <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
