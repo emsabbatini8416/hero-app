@@ -4,7 +4,7 @@
   <form [formGroup]="heroForm" (ngSubmit)="saveHero()">
     <div class="form-group">
       <label for="name">Hero Name</label>
-      <input id="name" formControlName="name" type="text" />
+      <input id="name" formControlName="name" type="text" appCamelCase />
     </div>
 
     <div class="button-group">

@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
 import { CommonModule } from '@angular/common';
+import { CamelCaseDirective } from '../../shared/directives/camel-case.directive';
 
 @Component({
   standalone: true,
   selector: 'app-hero-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CamelCaseDirective],
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss'],
 })
