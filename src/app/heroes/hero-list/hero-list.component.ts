@@ -1,12 +1,13 @@
 import { Component, computed, signal } from '@angular/core';
 import { HeroService } from '../../services/hero.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 
 @Component({
   standalone: true,
   selector: 'app-hero-list',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgFor, NgIf, PaginationComponent],
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.scss'],
 })
@@ -24,6 +25,14 @@ export class HeroListComponent {
     )
   );
 
+  get currentPage() {
+    return this.heroService.currentPage();
+  }
+
+  get totalPages() {
+    return this.heroService.totalPages();
+  }
+
   deleteHero(id: number) {
     this.heroService.deleteHero(id);
   }
@@ -31,5 +40,9 @@ export class HeroListComponent {
   onFilterChange(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.filterText.set(value);
+  }
+
+  onPageChange(newPage: number) {
+    this.heroService.setPage(newPage);
   }
 }

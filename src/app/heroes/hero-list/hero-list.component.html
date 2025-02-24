@@ -23,6 +23,12 @@
       No heroes found.
     </div>
   </div>
+  <app-pagination 
+    *ngIf="totalPages > 1"
+    [currentPage]="currentPage" 
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
 
   <button class="create-hero-button" [routerLink]="['/heroes/create']">
     Create New Hero
