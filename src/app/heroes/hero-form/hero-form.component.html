@@ -2,7 +2,7 @@
   <h2>{{ editMode() ? 'Edit Hero' : 'Create Hero' }}</h2>
 
   <form [formGroup]="heroForm" (ngSubmit)="saveHero()">
-    <div class="form-group">
+    <div class="hero-form-group">
       <label for="name">Hero Name</label>
       <input id="name" formControlName="name" type="text" appCamelCase />
       <div class="error-message" *ngIf="nameControl?.invalid && nameControl?.touched">
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="button-group">
+    <div class="hero-form-actions">
       <button class="save" type="submit" [disabled]="heroForm.invalid">Save</button>
       <button class="cancel" type="button" (click)="cancel()">Cancel</button>
     </div>

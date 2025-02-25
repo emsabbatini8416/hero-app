@@ -1,7 +1,7 @@
 <div class="hero-list-container">
   <h1>Hero List</h1>
   
-  <div class="filter-container">
+  <div class="hero-list-filter">
     <input
       type="text"
       placeholder="Search heroes by name..."
@@ -11,18 +11,19 @@
   </div>
 
   <div class="hero-list">
-    <div class="hero-card" *ngFor="let hero of filteredHeroes()">
+    <div class="hero-list-card" *ngFor="let hero of filteredHeroes()">
       <div class="hero-name">{{ hero.name }}</div>
-      <div class="button-group">
+      <div class="hero-actions">
         <button class="edit" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
         <button class="delete" (click)="deleteHero(hero.id)">Delete</button>
       </div>
     </div>
 
-    <div class="no-results" *ngIf="filteredHeroes().length === 0">
+    <div class="hero-list-no-results" *ngIf="filteredHeroes().length === 0">
       No heroes found.
     </div>
   </div>
+  
   <app-pagination 
     *ngIf="totalPages > 1"
     [currentPage]="currentPage" 
@@ -30,9 +31,9 @@
     (pageChange)="onPageChange($event)">
   </app-pagination>
 
-  <button class="create-hero-button" [routerLink]="['/heroes/create']">
+  <button class="create" [routerLink]="['/heroes/create']">
     Create New Hero
   </button>
-  
+
   <app-confirmation-modal />
 </div>

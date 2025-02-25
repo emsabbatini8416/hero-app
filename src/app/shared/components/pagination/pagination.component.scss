@@ -1,21 +1,13 @@
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  gap: 10px;
+#pagination-container {
+  &.pagination-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 10px;
+  }
 
   button {
     padding: 5px 10px;
-    border: none;
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    
-    &:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
   }
 }

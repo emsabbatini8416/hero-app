@@ -1,12 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
-    color: #2c3e50;
-  }
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+// Button Styles
+button {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
   
-  button {
-    font-family: inherit;
+  cursor: pointer;
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
   }
+
+  &.delete {
+    background: #e74c3c;
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+
+  &.edit, &.save {
+    background: #2ecc71;
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
+
+  &.cancel {
+    background: gray;
+  }
+
+  &.create {
+    background-color: #3498db;
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}
+
+// Label Styles
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+// Input Styles
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+// Error Message Styles
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
