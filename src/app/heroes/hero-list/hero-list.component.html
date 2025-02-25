@@ -11,25 +11,29 @@
   </div>
 
   <div class="hero-list">
-    <div class="hero-list-card" *ngFor="let hero of filteredHeroes()">
-      <div class="hero-name">{{ hero.name }}</div>
-      <div class="hero-actions">
-        <button class="edit" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
-        <button class="delete" (click)="deleteHero(hero.id)">Delete</button>
+    @for (hero of filteredHeroes(); track $index) {
+      <div class="hero-list-card">
+        <div class="hero-name">{{ hero.name }}</div>
+        <div class="hero-actions">
+          <button class="edit" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
+          <button class="delete" (click)="deleteHero(hero.id)">Delete</button>
+        </div>
       </div>
-    </div>
-
-    <div class="hero-list-no-results" *ngIf="filteredHeroes().length === 0">
-      No heroes found.
-    </div>
+    }
+    @if (filteredHeroes().length === 0) {
+      <div class="hero-list-no-results">
+        No heroes found.
+      </div>
+    }
   </div>
   
-  <app-pagination 
-    *ngIf="totalPages > 1"
-    [currentPage]="currentPage" 
-    [totalPages]="totalPages"
-    (pageChange)="onPageChange($event)">
-  </app-pagination>
+  @if (totalPages > 1) {
+    <app-pagination 
+      [currentPage]="currentPage" 
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+  }
 
   <button class="create" [routerLink]="['/heroes/create']">
     Create New Hero

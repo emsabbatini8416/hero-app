@@ -1,10 +1,12 @@
-<div id="modal-container" class="modal-overlay" *ngIf="modalService.isOpen()">
-  <div class="modal-content">
-    <h3>Are you sure?</h3>
-    <p>Do you really want to delete this hero? This action cannot be undone.</p>
-    <div class="modal-actions">
-      <button class="delete" (click)="confirm()">Yes, Delete</button>
-      <button class="cancel" (click)="cancel()">Cancel</button>
+@if (modalService.isOpen()) {
+  <div id="modal-container" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Are you sure?</h3>
+      <p>Do you really want to delete this hero? This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="delete" (click)="confirm()">Yes, Delete</button>
+        <button class="cancel" (click)="cancel()">Cancel</button>
+      </div>
     </div>
   </div>
-</div>
+}

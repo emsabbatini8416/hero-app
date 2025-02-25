@@ -5,10 +5,16 @@
     <div class="hero-form-group">
       <label for="name">Hero Name</label>
       <input id="name" formControlName="name" type="text" appCamelCase />
-      <div class="error-message" *ngIf="nameControl?.invalid && nameControl?.touched">
-        <p *ngIf="nameControl?.errors?.['required']">Name is required.</p>
-        <p *ngIf="nameControl?.errors?.['pattern']">Only letters are allowed.</p>
-      </div>
+      @if (nameControl?.invalid && nameControl?.touched) {
+        <div class="error-message">
+          @if (nameControl?.errors?.['pattern']) {
+            <p>Only letters are allowed.</p>
+          } 
+          @else {
+            <p>Name is required.</p>
+          }
+        </div>
+      }
     </div>
 
     <div class="hero-form-actions">
