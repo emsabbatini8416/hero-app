@@ -68,4 +68,34 @@
       }
     }
   }
+
+
+  input {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:disabled {
+    background: #ccc;
+  }
 }

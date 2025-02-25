@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
@@ -13,20 +13,22 @@ import { CamelCaseDirective } from '../../shared/directives/camel-case.directive
   styleUrls: ['./hero-form.component.scss'],
 })
 export class HeroFormComponent {
-  heroForm: FormGroup;
+  private fb = inject(FormBuilder);
+  private heroService = inject(HeroService)
+  heroForm: FormGroup = this.fb.group({
+    name: ['', [Validators.required, Validators.pattern(/^[A-Za-z\s]+$/)]]
+  });
   editMode = signal(false);
   heroId: number | null = null;
 
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private heroService: HeroService
-  ) {
-    this.heroForm = this.fb.group({
-      name: ['', Validators.required],
-    });
+  get nameControl() {
+    return this.heroForm.get('name');
+  }
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
       this.editMode.set(true);
