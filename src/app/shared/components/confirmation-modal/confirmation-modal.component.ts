@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core'
-import { ModalService } from '../../../services/modal.service'
+import { Component, inject } from '@angular/core';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   standalone: true,
@@ -8,13 +8,13 @@ import { ModalService } from '../../../services/modal.service'
   styleUrls: ['./confirmation-modal.component.scss'],
 })
 export class ConfirmationModalComponent {
-  modalService = inject(ModalService)
+  modalService = inject(ModalService);
 
   confirm() {
-    this.modalService.confirm()
+    this.modalService.confirm();
   }
 
   cancel() {
-    this.modalService.cancel()
+    this.modalService.cancel();
   }
 }

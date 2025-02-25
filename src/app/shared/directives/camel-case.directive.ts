@@ -5,7 +5,10 @@ import { Directive, HostListener, Renderer2, ElementRef } from '@angular/core';
   standalone: true,
 })
 export class CamelCaseDirective {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   @HostListener('input', ['$event'])
   onInput() {
@@ -25,9 +28,7 @@ export class CamelCaseDirective {
     return value
       .toLowerCase()
       .split(' ')
-      .map(
-        (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-      )
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(' ');
   }
 }

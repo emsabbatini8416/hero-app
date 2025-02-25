@@ -14,9 +14,9 @@ import { CamelCaseDirective } from '../../shared/directives/camel-case.directive
 })
 export class HeroFormComponent {
   private fb = inject(FormBuilder);
-  private heroService = inject(HeroService)
+  private heroService = inject(HeroService);
   heroForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.pattern(/^[A-Za-z\s]+$/)]]
+    name: ['', [Validators.required, Validators.pattern(/^[A-Za-z\s]+$/)]],
   });
   editMode = signal(false);
   heroId: number | null = null;
@@ -27,7 +27,7 @@ export class HeroFormComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) {
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
@@ -51,7 +51,7 @@ export class HeroFormComponent {
       this.router.navigate(['/heroes']);
     }
   }
-  
+
   cancel() {
     this.router.navigate(['/heroes']);
   }

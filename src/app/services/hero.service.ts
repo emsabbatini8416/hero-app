@@ -14,12 +14,12 @@ export class HeroService {
   currentPage = signal(1);
 
   heroes = computed(() => {
-    const start = (this.currentPage() - 1) * this.itemsPerPage()
-    const end = start + this.itemsPerPage()
-    return this._heroes().slice(start, end)
+    const start = (this.currentPage() - 1) * this.itemsPerPage();
+    const end = start + this.itemsPerPage();
+    return this._heroes().slice(start, end);
   });
 
-  totalPages = computed(() => Math.ceil(this._heroes().length / this.itemsPerPage()))
+  totalPages = computed(() => Math.ceil(this._heroes().length / this.itemsPerPage()));
 
   addHero(name: string) {
     const newHero: Hero = {
@@ -31,7 +31,7 @@ export class HeroService {
 
   updateHero(id: number, name: string) {
     this._heroes.update((heroes) =>
-      heroes.map((hero) => (hero.id === id ? { ...hero, name } : hero))
+      heroes.map((hero) => (hero.id === id ? { ...hero, name } : hero)),
     );
   }
 

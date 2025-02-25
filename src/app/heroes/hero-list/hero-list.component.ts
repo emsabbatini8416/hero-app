@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { HeroService } from '../../services/hero.service';
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 import { ModalService } from '../../services/modal.service';
@@ -14,17 +14,17 @@ import { ConfirmationModalComponent } from '../../shared/components/confirmation
   styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent {
-  private heroService = inject(HeroService)
+  private heroService = inject(HeroService);
   private modalService = inject(ModalService);
 
-  heroes = this.heroService.heroes
+  heroes = this.heroService.heroes;
 
-  filterText = signal<string>('')
+  filterText = signal<string>('');
 
   filteredHeroes = computed(() =>
     this.heroes().filter((hero) =>
-      hero.name.toLowerCase().includes(this.filterText().toLowerCase())
-    )
+      hero.name.toLowerCase().includes(this.filterText().toLowerCase()),
+    ),
   );
 
   get currentPage() {

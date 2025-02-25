@@ -27,7 +27,7 @@ button {
   border: none;
   border-radius: 5px;
   background: #007bff;
-  
+
   cursor: pointer;
 
   &:disabled {
@@ -42,7 +42,8 @@ button {
     }
   }
 
-  &.edit, &.save {
+  &.edit,
+  &.save {
     background: #2ecc71;
     &:hover {
       background-color: #27ae60;
@@ -76,7 +77,6 @@ input {
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
-
 }
 
 input.ng-invalid.ng-touched {
@@ -88,4 +88,3 @@ input.ng-invalid.ng-touched {
   color: red;
   font-size: 14px;
 }
-
