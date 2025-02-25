@@ -14,7 +14,7 @@ import { ConfirmationModalComponent } from '../../shared/components/confirmation
   styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent {
-  private heroService = inject(HeroService);
+  heroService = inject(HeroService);
   private modalService = inject(ModalService);
 
   heroes = this.heroService.heroes;
@@ -26,14 +26,6 @@ export class HeroListComponent {
       hero.name.toLowerCase().includes(this.filterText().toLowerCase()),
     ),
   );
-
-  get currentPage() {
-    return this.heroService.currentPage();
-  }
-
-  get totalPages() {
-    return this.heroService.totalPages();
-  }
 
   async deleteHero(id: number) {
     const confirmed = await this.modalService.open();
